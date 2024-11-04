@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .event-page {
+            /* max-width: 390px; */
+            margin: auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f8f8;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .header button {
+            font-size: 1.5rem;
+            border: none;
+            background: none;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+
+        .event-details {
+            padding: 15px;
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .artist-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: space-between;
+        }
+
+        .artist-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .artist-Details {
+            display: flex;
+        }
+
+        .clock {
+            display: flex;
+            align-items: center;
+        }
+
+        .clock i {}
+
+        .artist-info .follow-btn {
+            width: Hug (95px)px;
+            height: Hug (32px)px;
+            padding: 8px 24px 8px 24px;
+            gap: 20px;
+            border-radius: 6px;
+            opacity: 0px;
+            background: #303237;
+            color: white;
+
+        }
+
+        .event-meta {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .event-meta i {
+            margin-right: 1rem;
+            left: 24px;
+            padding: 8px;
+            gap: 0px;
+            border-radius: 10px;
+            opacity: 0px;
+            background: #F7F7F7;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .ticket-section {
+            background-color: #757575D4;
+            padding: 15px;
+            margin: 0 15px;
+            border-radius: 10px;
+            color: white;
+            border: 1px solid #FFFFFF
+        }
+
+        .ticket-section h3 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .ticket-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #303237;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            gap: 0px;
+            border-radius: 8px;
+            border: 1px 0px 0px 0px;
+            opacity: 0px;
+            border: 1px solid #FFFFFF
+        }
+
+        .ticket-option span {
+            font-weight: 500;
+        }
+
+        .ticket-option .ticket-price {
+            font-weight: bold;
+        }
+
+        .ticket-option .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-control button {
+            width: 41px;
+            height: 26px;
+            top: 9px;
+            left: 212px;
+            padding: 5px 12px 5px 13px;
+            gap: 0px;
+            border-radius: 4px;
+            opacity: 0px;
+            background: #FFFFFF14;
+            color: white;
+
+
+        }
+
+        .quantity-control span {
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        .get-ticket-btn {
+            width: 100%;
+            padding: 10px;
+            font-weight: bold;
+            background: #FFFFFF;
+
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            text-align: center;
+            color: #320000;
+
+        }
+
+        .optionDisable {
+            background: #FFFFFF14;
+
+        }
+
+        .description {
+            padding: 15px;
+            color: #555;
+        }
+
+        .joined {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .joined img {
+            margin-right: 1rem;
+
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+            box-shadow: 0px 0px 14px 0px #00000026;
+
+        }
+
+        .footer .button-section {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer button {
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer .share-button {
+            width: 168px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 17px;
+            gap: 0px;
+            border-radius: 10px;
+            border: 1px;
+            opacity: 0px;
+            border: 1px solid #30323733;
+            color: #376FFF;
+            ;
+        }
+
+        .footer .ticket-button {
+            width: 168px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 17px;
+            gap: 0px;
+            border-radius: 10px;
+            border: 1px;
+            opacity: 0px;
+            background: #303237;
+            color: white;
+
+        }
+
+        .footer button span {
+            font-size: 18px;
+        }
+
+        .footer i {
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="event-page">
+
+        <!-- Header -->
+        <div class="header">
+            <button class="btn">&larr;</button>
+            <span>Event Page</span>
+            <button class="btn">&#x2661;</button>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <img src="./image/1 → compressed_SATOSHI_-_Spor.png@2x.png" alt="Event Banner">
+        </div>
+
+        <!-- Event Details -->
+        <div class="event-details">
+            <div class="event-title">SATOSHI - Sport Tour 2024 Cluj-Napoca</div>
+
+            <div class="artist-info">
+
+
+                <div class="artist-Details">
+                    <img src="./image/adrian_coneaprofile_image__compressed_IMG_8357.jpeg.png" alt="Artist Avatar">
+                    <div>
+                        <div>Satoshi</div>
+                        <small class="text-muted">4,789 followers</small>
+                    </div>
+
+                </div>
+                <button class="follow-btn btn btn-outline-primary ms-auto">Follow</button>
+            </div>
+            <hr>
+            <div class="event-meta">
+                <div class="clock">
+                    <i class="bi bi-clock d-flex"></i>
+                    <p>November 24, 2024 <br>19:00</p>
+                </div>
+                <div class="clock">
+                    <i class="bi bi-geo-alt"></i>
+                    <p>Bucharest, Romania <br> Quantic Pub</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Ticket Section -->
+        <div class="ticket-section">
+            <h3>Get Tickets</h3>
+            <p>Welcome! Please choose your desired ticket type:</p>
+
+            <div class="ticket-option">
+                <div>
+                    <span>Early Bird</span>
+                    <br>
+                    <span class="ticket-price">€55.00</span>
+                </div>
+                <div class="quantity-control">
+                    <button disabled>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="ticket-option optionDisable">
+                <div>
+                    <span>Standard</span>
+                    <br>
+                    <span class="ticket-price">€60.00</span>
+                </div>
+                <div class="quantity-control ">
+                    <button disabled>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="ticket-option optionDisable">
+                <div>
+                    <span>Bizum</span>
+                    <br>
+                    <small class="text-warning">Free</small>
+                    <small class="text-warning"> Requires Approval</small>
+                </div>
+                <div class="quantity-control">
+                    <button disabled>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+
+
+
+
+
+            <button class="get-ticket-btn">Get Ticket</button>
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <div class="artist-Details joined">
+                <img src="./image/adrian_coneaprofile_image__compressed_IMG_8357.jpeg.png" alt="Artist Avatar">
+                <div class="">
+                    <div>1 joined</div>
+
+                </div>
+
+            </div>
+            <p><strong>Description</strong></p>
+            <p>Satoshi, un artist emergent din Republica Moldova, a
+                captat atenția publicului cu piesele sale vibrante,
+                precum „Caștile Mele”, „Mama Mi-a Spus” și „N...</p>
+
+            <a href="">Read More</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="button-section">
+                <button class="share-button">Share event <i class="bi bi-share"></i></button>
+
+                <button class="ticket-button">Get Ticket</button>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
